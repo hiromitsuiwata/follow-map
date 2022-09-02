@@ -16,12 +16,12 @@ bearer_token = os.environ.get("BEARER_TOKEN")
 
 def create_url():
     # Replace with user ID below
-    user_id = 2244994945
+    user_id = 2244994945 
     return "https://api.twitter.com/2/users/{}/followers".format(user_id)
 
 
 def get_params():
-    return {"user.fields": "created_at"}
+    return {"user.fields": "created_at,location,description,entities,public_metrics,verified,profile_image_url,url", "max_results": 1000}
 
 
 def bearer_oauth(r):
